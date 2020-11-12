@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo&family=Raleway:wght@500;700;800&display=swap');
+.malling{
+    font-family: 'Raleway', sans-serif;
+    max-width: 330px;
+    width: 100%;
+    background: #61B650;
+    border-radius: 0px 10px 10px 0px;
+    padding: 20px 28px;
+    box-sizing: border-box;
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    transform: translateX(-332px);
+    transition: all 0.3s ease;
+}
+.malling__arrow{
+    transition: all 0.34s ease;
+}
+.malling.malling_open{
+    transform: translateX(0);
+}
+.malling_open .malling__arrow{
+    transform: rotate(180deg);
+}
+.malling__circle{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -29px;
+    width: 36px;
+    height: 154px;
+    background: url('malling-btn.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.malling__title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.malling__title p{
+    margin: 0;
+}
+.malling__title span{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFA22A;
+}
+.malling__email,.malling__tel{ 
+    max-width: 274px;
+    width: 100%;
+}
+.malling__email input,.malling__tel input{
+    border: none;
+    outline: none;
+    max-width: 274px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 7px;
+    padding: 9px 15px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+.malling__email input:focus,.malling__tel input:focus{
+    border: 1px solid #FFA22A;
+}
+.malling__btn{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #FFA22A;
+    border-radius: 7px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 16px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.malling__close{
+    display: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.malling__close:hover{
+    transform: rotate(90deg);
+}
+.malling__mobile{
+    display: none;
+}
+.malling__mobile .malling__arrow{
+    transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 21px;
+}
+@media (max-width: 500px){
+    .malling__circle{
+        display: none;
+    }
+    .malling{
+        position: fixed;
+        right: 50%;
+        top: 50%;
+        left: unset;
+        border-radius: 8px;
+        padding-top: 40px;
+        transform: translate(50%, -50%);
+        display: none;
+        max-width: 314px;
+    }
+    .malling.malling_open{
+        display: block;
+        transform: translate(50%, -50%);
+
+    }
+    .malling__close{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .malling__mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        background: url('malling-mobile.png');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+        transform: translateX(50%);
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .3s ease;
+        opacity: 1;
+    }
+    .malling__mobile.malling__mobile_none{
+        opacity: 0;
+    }
+}
